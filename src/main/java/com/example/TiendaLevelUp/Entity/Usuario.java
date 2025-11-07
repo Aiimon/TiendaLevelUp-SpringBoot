@@ -12,39 +12,39 @@ public class Usuario {
     
     @Id
     @GeneratedValue
-    private int empId;
+    private int usuarioId;
     
-    @Column(name="firstName")
-    private String firstName;
+    @Column(name="primernom")
+    private String primernom;
     
-    @Column(name="lastName")
-    private String lastName;
+    @Column(name="apellido")
+    private String apellido;
     
     @Column(name="email", nullable =false, length=200)
     private String email;
 
-    public int getEmpId() {
-        return empId;
+    public int getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setEmpId(int empId) {
-        this.empId = empId;
+    public void setusuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getPrimerNom() {
+        return primernom;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPrimerNom(String primernom) {
+        this.primernom = primernom;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getApellido() {
+        return primernom;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getEmail() {
@@ -57,7 +57,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Employee{" + "empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + '}';
+        return "Usuario{" + "usuarioId=" + usuarioId + ", primernom=" + primernom + ", apellido=" + apellido + ", email=" + email + '}';
     }
     
 }
