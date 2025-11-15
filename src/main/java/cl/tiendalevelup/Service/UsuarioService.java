@@ -2,6 +2,8 @@ package cl.tiendalevelup.Service;
 
 import cl.tiendalevelup.Entity.Usuario;
 import cl.tiendalevelup.Repository.UsuarioRepository;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,14 +51,15 @@ public class UsuarioService {
     }
 
     // Actualizar usuario
-    public Usuario updateUsuario(Usuario u) {
-
-        return repository.findById(u.getUsuarioId()).map(existingUsuario -> {
-            existingUsuario.setPrimerNom(u.getPrimerNom());
-            existingUsuario.setApellido(u.getApellido());
-            existingUsuario.setEmail(u.getEmail());
-            return repository.save(existingUsuario);
-        }).orElse(null);
+    public Usuario updateUsuario(@RequestBody Usuario u) {
+        return repository.findById(u.getUsuarioId())
+                        .map(existing -> {
+                            existing.setPrimerNom(u.getPrimerNom());
+                            existing.setApellido(u.getApellido());
+                            existing.setEmail(u.getEmail());
+                            return repository.save(existing);
+                        })
+                        .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     }
 
 }
