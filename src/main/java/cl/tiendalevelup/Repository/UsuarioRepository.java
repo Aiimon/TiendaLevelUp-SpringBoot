@@ -1,6 +1,6 @@
-package com.example.TiendaLevelUp.Repository;
+package cl.tiendalevelup.Repository;
 
-import com.example.TiendaLevelUp.Entity.Usuario;
+import cl.tiendalevelup.Entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
